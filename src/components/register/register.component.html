@@ -1,0 +1,68 @@
+<mat-card class="register-card">
+    <mat-card-title>Register</mat-card-title>
+    <h4></h4>
+    <form [formGroup]="userRegisterForm" (ngSubmit)="onSubmit()">
+        <!-- Name -->
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput id="name" formControlName="name" required>
+            @if (user['name']&&user['name'].errors && user['name'].touched && user['name'].errors["required"]) {
+            <mat-error>name is required</mat-error>
+            }
+        </mat-form-field>
+
+        <!-- Email -->
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput id="email" formControlName="email" required>
+            @if (user['email']&&user['email'].errors && user['email'].touched &&user['email'].errors["required"]) {
+            <mat-error>email is required</mat-error>
+            }
+            @if (user['email']&&user['email'].errors && user['email'].touched &&user['email'].errors["email"]) {
+                <mat-error>email is not valid</mat-error>
+            }
+        </mat-form-field>
+
+        <!-- Password -->
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput id="password" formControlName="password" [type]="hidePassword ? 'password' : 'text'"
+                required>
+            <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                <div id="eye">👁️</div>
+            </mat-icon>
+            @if (user['password']&&user['password'].errors &&user['password'].touched
+            &&user["password"].errors["required"]) {
+            <mat-error>password is required</mat-error>
+            }
+            @if(user['password']&&user['password'].errors &&user['password'].touched &&user["password"]
+            &&user["password"].errors["minlength"]) {
+            <mat-error>password must be at least 4 characters</mat-error>
+            }
+            @if(user['password']&&user['password'].errors &&user['password'].touched
+            &&user["password"]&&user["password"].errors["maxlength"]) {
+            <mat-error>password must be at most 8 characters</mat-error>
+
+            }
+
+
+
+        </mat-form-field>
+
+        <!-- Role -->
+        <mat-form-field appearance="outline">
+            <mat-label>Role</mat-label>
+            <mat-select formControlName="role" required panelClass="custom-select-panel" disableRipple>
+                <mat-option value="admin">Admin</mat-option>
+                <mat-option value="student">Student</mat-option>
+                <mat-option value="teacher">Teacher</mat-option>
+            </mat-select>
+            @if (user['role']&&user['role'].errors &&user['role'].touched &&user['role'].errors["required"]) {
+            <mat-error>role is required</mat-error>
+            }
+        </mat-form-field>
+
+        <!-- Submit Button -->
+        <button mat-raised-button type="submit" [disabled]="userRegisterForm.invalid">Submit</button>
+    </form>
+</mat-card>

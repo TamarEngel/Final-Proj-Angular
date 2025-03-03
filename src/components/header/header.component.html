@@ -1,0 +1,29 @@
+<mat-toolbar color="primary" class="toolbar">
+  <div class="toolbar-content">
+    <!-- @if(getFromSessionStorage('token')) {
+    <div class="profile-circle">
+      {{getName()}}
+      {{ userName }}
+    </div>
+    <span class="spacer"></span>
+    } -->
+
+    <nav>
+      @if(!getFromSessionStorage('token')) {
+      <button mat-button routerLink="login" routerLinkActive="active1">Login</button>
+      <button mat-button routerLink="register" routerLinkActive="active1">Sign-Up</button>
+      }
+      <a mat-button routerLink="/" routerLinkActive="active1">Home</a>
+      <a mat-button routerLink="/availableCourses" routerLinkActive="active1">Available Courses</a>
+      <a mat-button routerLink="/myCourses" routerLinkActive="active1">My Courses</a>
+      <a mat-button routerLink="/allCourses" routerLinkActive="active1">All Courses</a>
+    </nav>
+  </div>
+</mat-toolbar>
+<router-outlet></router-outlet>
+
+
+
+
+
+ 

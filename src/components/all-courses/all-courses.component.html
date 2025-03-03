@@ -1,0 +1,61 @@
+<h2 >ALL COURSES</h2>
+
+<mat-card class="course-card">
+    <mat-accordion>
+        @for (course of courses; track course.id) {
+            <mat-expansion-panel >
+                <mat-expansion-panel-header>
+                    <mat-panel-title>{{ course.title }}</mat-panel-title>
+                </mat-expansion-panel-header>
+    
+                <mat-card-content>
+                    <p>{{ course.description }}</p>
+                    <mat-list>
+                        <p>Lessons for {{course.title}}:</p>
+                        @if(role =='teacher'){
+                            <button class="hg" (click)="toggLessonAdd(course.id!)">Add Lesson</button>
+                        }
+                        @for (lesson of course.lessons; track lesson.title) {
+                            <div class="lesson-item">
+                                <div class="lesson-content">
+                                    <span>{{ lesson.title }}</span> => {{ lesson.content }}
+                                </div>
+                                @if(role == 'teacher') {
+                                    <div class="lesson-buttons">
+                                        <button mat-mini-button (click)="toggLessonEdit(lesson)">Edit Lesson</button>
+                                        <button mat-mini-button (click)="deleteLesson(lesson.id, course.id!)">Delete Lesson</button>
+                                    </div>
+                                }
+                            </div>
+                        }
+                        
+                        
+                    </mat-list>
+                </mat-card-content>
+                @if(role=='teacher'){
+                    <div class="action-buttons">
+                        <button mat-raised-button  (click)="toggleEdit(course)">Edit Course</button>
+                        <button mat-raised-button  (click)="deleteCourse(course.id!)">Delete Course</button>
+                    </div>
+                }
+            </mat-expansion-panel>
+        }
+    </mat-accordion>
+    @if(role =='teacher'){
+        <div class="add-course-button">
+            <button mat-fab  (click)="toggleAdd()">Add Course</button>
+        </div>
+    }
+    @if(this.add){
+        <app-create-new-course [coursee]="course" (save)="addCourse($event)"></app-create-new-course>
+    }
+    @if(this.edit){
+        <app-create-new-course [coursee]="course" (save)="editCourse($event)"></app-create-new-course>
+    }
+    @if(this.addLes){
+        <app-lesson-form [les]="lesson" (save)="addLesson($event)"></app-lesson-form>
+    }
+    @if(this.editLes){
+        <app-lesson-form [les]="lesson" (save)="editLesson($event)"></app-lesson-form>
+    }
+</mat-card>

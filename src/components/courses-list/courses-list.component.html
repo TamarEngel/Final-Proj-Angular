@@ -1,0 +1,21 @@
+<h2 class="courses-title">COURSES</h2>
+<mat-card class="course-card">
+    <mat-accordion>
+        @for (course of courses; track course) {
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{ course.title }}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="course-description">
+                {{ course.description }}
+                <span class="lesson-buttons">
+                    <button mat-mini-button (click)="enrollCourse(course.id!)">Enroll</button>
+                    <button mat-mini-button (click)="unenrollCourse(course.id!)">Unenroll</button>
+                </span>
+            </p>
+        </mat-expansion-panel>
+        }
+    </mat-accordion>
+</mat-card>

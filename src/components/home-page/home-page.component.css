@@ -1,0 +1,67 @@
+/* שימוש בגופן עדין ויפה */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Open+Sans:wght@300;400;600&display=swap');
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f9f9f9; /* צבע רקע בהיר ועדין */
+  font-family: 'Open Sans', sans-serif; /* גופן רך ועדין */
+}
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  margin-left: 25%;
+}
+.about-card {
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  opacity: 0;  /* התחל בשקיפות מלאה */
+  transform: translateY(50px);  /* התחל מעט מלמטה */
+  animation: slideIn 0.7s ease-out forwards;
+  /* אנימציה רכה כלפי מעלה */
+}
+
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateY(-50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+mat-card-header {
+  background-color: white; /* צבע לבן רקע הכותרת */
+  padding: 16px;
+  border-radius: 12px;
+}
+
+mat-card-title {
+  font-size: 1.6em;
+  font-weight: 500;
+  color: #70b2b1; /* ורוד עדין */
+  font-family: 'Roboto', sans-serif; /* גופן מודרני לכותרת */
+}
+
+mat-card-content {
+  font-size: 1.2em;
+  color: #666; /* צבע טקסט כהה ועשיר */
+  line-height: 1.6;
+}
+
+mat-divider {
+  margin: 20px 0;
+  background-color: #f8a5c2; /* צבע ורוד עדין של קו החצייה */
+}

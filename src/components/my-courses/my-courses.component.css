@@ -1,0 +1,77 @@
+/* אנימציה של הצגת הכרטיס */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* כרטיס קורס */
+.course-card {
+    background-color: rgba(255, 255, 255, 0.7);
+    /* רקע לבן שקוף */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 60%;
+    margin-left: 20%;
+    animation: slideIn 0.5s ease-out;
+    /* הוספתי את האנימציה */
+    margin-top: 20px;
+}
+
+/* עיצוב כותרת הכרטיס */
+h2 {
+    font-size: 1.7em;
+    color: #70b2b1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* כותרת פנימית לכל Panel */
+.mat-expansion-panel-header {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.mat-expansion-panel-header .mat-panel-title {
+    font-size: 2em;
+    /* גודל הפונט גדול */
+    font-family: 'Arial', sans-serif;
+    color: #70b2b1;
+    /* צבע טורקיז */
+    font-weight: bold;
+    text-transform: uppercase;
+    /* אותיות גדולות */
+}
+
+/* עיצוב תוכן בתוך ה-Panel */
+.mat-card-content {
+    padding: 15px 0;
+    font-size: 1.3em;
+    /* גודל הפונט */
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* רווחים בין Panels */
+.mat-expansion-panel {
+    margin-bottom: 20px;
+    /* הוספתי רווח בין כל כרטיס לכרטיס */
+}
+
+
+.course-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}

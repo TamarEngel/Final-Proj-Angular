@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/@angular/material/prebuilt-themes/rose-red.css";
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+html{
+  height: 100vh;
+}
+body {
+  background-image: url('assets/pexels-pixabay-256417.jpg'); /* נתיב לתמונה */
+  background-size: cover; /* התמונה תתמלא ברקע כל העמוד */
+  background-position: center; /* מיקום התמונה במרכז */
+  background-attachment: fixed; /* רקע קבוע שלא יזוז בעת גלילה */
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* על מנת שהתמונה תכסה את כל גובה הדף */
+  font-family: 'Arial', sans-serif; /* גופן כללי לדף */
+  overflow: auto; /* גלילה תתאפשר רק כאשר התוכן חורג */
+}

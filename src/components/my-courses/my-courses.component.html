@@ -1,0 +1,18 @@
+<h2 class="courses-title">MY COURSES</h2>
+<mat-card class="course-card">
+    <mat-accordion>
+        @for (course of myCourses; track course) {
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{ course.title }}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="course-description">
+                {{ course.description }}
+            </p>
+        </mat-expansion-panel>
+        }
+    </mat-accordion>
+</mat-card>
+

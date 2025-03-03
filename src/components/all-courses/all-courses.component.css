@@ -1,0 +1,177 @@
+/* אנימציה לכרטיס קורס */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* כרטיס קורס - רקע שקוף */
+.course-card {
+  background-color: rgba(255, 255, 255, 0.7); /* רקע לבן שקוף */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 60%;
+  margin-left: 20%;
+  animation: slideIn 0.5s ease-out; /* אנימציה של הופעה */
+}
+
+.mat-expansion-panel-header-title, .mat-expansion-panel-header-description{
+  font-size: 1.1em; /* הגדלתי את הגודל */
+  font-family: 'Roboto', sans-serif;
+}
+
+h2{
+  margin-left: 45%;
+  font-family: 'Roboto', sans-serif;
+  color: #70b2b1;
+}
+/* כפתור הוספה */
+.add-course-button {
+  width: 800px;
+  margin-top: 20px;
+}
+.add-course-button button {
+  height: 40px;
+  width: 120px;
+  margin-top: 20px;
+  border: 5px;
+}
+
+button.mat-fab {
+  background-color: #ffffff;
+  border: 2px solid #70b2b1;
+  color: #70b2b1;
+  font-size: 1.1em;
+  padding: 12px 24px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button.mat-fab:hover {
+  background-color: #70b2b1;
+  color: white;
+}
+
+/* כפתורים בתוך ה-Panel */
+.action-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+}
+.action-buttons button {
+  color: #70b2b1;
+  border: 0px;
+}
+.action-buttons button:hover {
+  color: white;
+  border: 0px;
+}
+button {
+  background-color: #ffffff;
+  border: 2px solid #70b2b1;
+  color: #70b2b1;
+  font-size: 1em;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #70b2b1;
+  color: white;
+}
+
+button.mat-raised-button {
+  margin-right: 10px;
+  color: white;
+}
+
+/* עיצוב הטקסט */
+.mat-card-content {
+  font-size: 1.3em; /* הגדלתי את הגודל */
+  color: #333;
+  line-height: 1.6;
+}
+
+.mat-list-item {
+  font-size: 1.2em; /* הגדלתי את הגודל */
+  color: #555;
+}
+
+/* ריווח ואפקטים על הכפתורים */
+.mat-list {
+  margin-top: 10px;
+}
+
+.mat-panel-title {
+  font-weight: normal;
+}
+
+/* כותרת חזרה למעלה */
+h4 {
+  font-size: 1.3em; /* הגדלתי את הגודל */
+  color: #333;
+}
+
+/* עיצוב כללי */
+.mat-expansion-panel {
+  margin-bottom: 15px;
+}
+.mat-list{
+  margin-bottom: 20px;
+}
+/* מוודא שהתוכן והכפתורים יהיו בשורה אחת */
+.lesson-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd; /* הפרדה בין השיעורים */
+  margin-bottom: 10px;
+}
+
+/* שמירה על התוכן בצד שמאל */
+.lesson-content {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* כפתורים מיושרים לימין */
+.lesson-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+/* התאמת עיצוב הכפתורים */
+.lesson-buttons button {
+  font-size: 0.8em;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid white;
+  color: #70b2b1;
+  background: white;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.lesson-buttons button:hover {
+  background-color: #70b2b1;
+  color: white;
+}
+
+.hg{
+  margin-bottom: 20px;
+  color: #70b2b1;
+  border-color: #ffffff;
+  cursor: pointer;
+}

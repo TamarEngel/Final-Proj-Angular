@@ -1,0 +1,39 @@
+@if(isModalOpen){
+<div class="modal-overlay" (click)="onCancel()"></div>
+}
+@if(isModalOpen){
+    <mat-card class="modal-card">
+        <mat-card-title>Course Details</mat-card-title>
+        <h4></h4>
+        <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+
+            <mat-form-field appearance="outline">
+                <mat-label>Title</mat-label>
+                <input matInput id="title" formControlName="title" required>
+                @if (course['title']&&course['title'].errors &&course['title'].touched && course['title'].errors["required"]) {
+                    <mat-error>title is required</mat-error>
+                }   
+                @if(course['title']&&course['title'].errors &&course['title'].touched &&course["title"].errors["minlength"]) {
+                    <mat-error>title must be at least 4 characters</mat-error>
+                }
+                @if(course['title']&&course['title'].errors &&course['title'].touched &&course["title"].errors["maxlength"]) {
+                    <mat-error>title must be at most 20 characters</mat-error>
+                }    
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <input matInput id="description" formControlName="description" required>
+                @if (course['description']&&course['description'].errors &&course['description'].touched && course['description'].errors["required"]) {
+                    <mat-error>description is required</mat-error>
+                }
+                @if(course['description']&&course['description'].errors &&course['description'].touched && course["description"].errors["minlength"]) {
+                    <mat-error>description must be at least 10 characters</mat-error>
+                }
+            </mat-form-field>
+
+            <button mat-raised-button type="submit" [disabled]="courseForm.invalid">Submit</button>
+            <button mat-button type="button" (click)="onCancel()">Cancel</button>
+        </form>
+    </mat-card>
+}

@@ -1,0 +1,70 @@
+.toolbar {
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* מפריד בין הצדדים */
+  height: 70px; /* גובה קבוע ל-Header */
+}
+
+/* יישור התוכן במרכז */
+.toolbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* ממקם את הכפתורים במרכז */
+  flex-grow: 1; /* ממלא את החלל שנותר בין פרופיל לכפתורים */
+}
+
+/* עיצוב לכפתורי הניווט */
+.navigation a,
+.navigation button[mat-button] {
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 1.1em;
+  color: #2196F3;
+  transition: color 0.3s ease;
+}
+
+.navigation a:hover,
+.navigation button[mat-button]:hover {
+  color: black;
+}
+
+.active {
+  color: #0b7dda;
+  border-bottom: 2px solid #0b7dda;
+}
+
+/* עיצוב לעיגול הפרופיל */
+.profile-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #70b2b1;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 20px; /* רווח מהצד שמאל */
+}
+
+/* עיצוב למעבר עכבר על פרופיל */
+.profile-circle:hover {
+  background-color: #5a9897;
+}
+
+/* מרווח תחתון עבור תצוגת ה-router-outlet */
+router-outlet {
+  display: block;
+  margin-top: 100px;
+}
